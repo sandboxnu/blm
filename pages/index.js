@@ -42,23 +42,33 @@ function IconBulletPoint({ icon }) {
     </div>
   );
 }
-export default function Home() {
+export default function Home({ raised, total }) {
   return (
-    <div className="container mx-auto">
+    <div className="max-w-screen-md mx-auto mt-10">
       <Head>
         <title>Black Lives Matter</title>
+        <meta
+          name="description"
+          content="Northeastern clubs are matching donations to fight for racial justice."
+        />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="Northeastern clubs for Racial Justice"
+        />
+        <meta property="og:url" content="https://blm.sandboxnu.com" />
       </Head>
 
-      <div>NU clubs stand in solidarity with the Black community.</div>
+      <div className="uppercase tracking-wide text-4xl leading-tight font-bold text-blue-800">
+        Join us in the fight for racial justice
+      </div>
       <div>
-        Together, the eboards and members of many Northeastern clubs have
-        committed to matching donations to organizations fighting racial
-        injustice.
+        NU clubs are teaming up to match up to ${total} in donations to fight to
+        the following nonprofits
       </div>
 
       <div className="mt-5 mb-5">
-        <Progress raised={50} total={1000} />
+        <Progress raised={raised} total={total} />
       </div>
       <div className="text-3xl">Take action</div>
       <div className="grid grid-col-1 gap-5">
@@ -89,10 +99,24 @@ export default function Home() {
           <IconBulletPoint icon={faHandHoldingHeart} />
           <div>
             <h2>Let us match your donation</h2>
-            <p>
-              tbd. probably just email but may build a form and send data to
-              dynamodb
-            </p>
+            <div>
+              Send us a screenshot of your receipt (please include the nonprofit
+              name)
+            </div>
+            <a
+              className="font-bold hover:underline"
+              href="mailto:blm@sandboxnu.com"
+            >
+              blm@sandboxnu.com &gt;
+            </a>
+            <div>
+              <a
+                className="font-bold hover:underline"
+                href="https://m.me/sandboxnu"
+              >
+                FB Messenger &gt;
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex flex-row items-center">
@@ -112,4 +136,13 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  return {
+    props: {
+      raised: 60,
+      total: 1000,
+    },
+  };
 }
