@@ -15,9 +15,9 @@ function Progress({ raised, total }) {
         <span className="text-2xl">${raised}</span>
         <span className="text-gray-700"> matched of ${total}</span>
       </span>
-      <div className=" h-3 bg-white rounded-full shadow-xs">
+      <div className="h-3 bg-white rounded-full shadow-xs">
         <div
-          className="h-full bg-black rounded-full"
+          className="h-full bg-blue-800 rounded-full"
           style={{ width: `${percent}%` }}
         ></div>
       </div>
@@ -36,7 +36,7 @@ function Nonprofit({ name, link }) {
 function IconBulletPoint({ icon }) {
   return (
     <div className="ml-5 mr-10">
-      <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center">
+      <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center">
         <FontAwesomeIcon icon={icon} size="2x" color="#eee" />
       </div>
     </div>
@@ -63,8 +63,8 @@ export default function Home({ raised, total }) {
         Join us in the fight for racial justice
       </div>
       <div>
-        NU clubs are teaming up to match up to ${total} in donations to fight to
-        the following nonprofits
+        NU clubs are teaming up to match up to ${total} in donations to the
+        following nonprofits
       </div>
 
       <div className="mt-5 mb-5">
