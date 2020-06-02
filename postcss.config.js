@@ -1,9 +1,9 @@
 module.exports = {
   plugins: [
-    "tailwindcss",
+    require("tailwindcss"),
     process.env.NODE_ENV === "production"
       ? [
-          "@fullhuman/postcss-purgecss",
+          require("@fullhuman/postcss-purgecss"),
           {
             content: [
               "./pages/**/*.{js,jsx,ts,tsx}",
@@ -14,6 +14,6 @@ module.exports = {
           },
         ]
       : undefined,
-    "autoprefixer",
+    require("autoprefixer"),
   ],
 };

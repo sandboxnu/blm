@@ -1,209 +1,115 @@
-import Head from 'next/head'
+import Head from "next/head";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faDonate,
+  faHandHoldingHeart,
+  faBullhorn,
+  faBookOpen,
+} from "@fortawesome/free-solid-svg-icons";
 
+function Progress({ raised, total }) {
+  const percent = Math.floor((raised / total) * 100);
+  return (
+    <div className="w-full max-w-xl">
+      <span>
+        <span className="text-2xl">${raised}</span>
+        <span className="text-gray-700"> matched of ${total}</span>
+      </span>
+      <div className=" h-3 bg-white rounded-full shadow-xs">
+        <div
+          className="h-full bg-black rounded-full"
+          style={{ width: `${percent}%` }}
+        ></div>
+      </div>
+    </div>
+  );
+}
+function Nonprofit({ name, link }) {
+  return (
+    <div>
+      <a className="font-semibold hover:underline" href={link}>
+        {name} &gt;
+      </a>
+    </div>
+  );
+}
+function IconBulletPoint({ icon }) {
+  return (
+    <div className="ml-5 mr-10">
+      <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center">
+        <FontAwesomeIcon icon={icon} size="2x" color="#eee" />
+      </div>
+    </div>
+  );
+}
 export default function Home() {
   return (
-    <div className="container">
+    <div className="container mx-auto">
       <Head>
-        <title>Create Next App</title>
+        <title>Black Lives Matter</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <div>NU clubs stand in solidarity with the Black community.</div>
+      <div>
+        Together, the eboards and members of many Northeastern clubs have
+        committed to matching donations to organizations fighting racial
+        injustice.
+      </div>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <div className="mt-5 mb-5">
+        <Progress raised={50} total={1000} />
+      </div>
+      <div className="text-3xl">Take action</div>
+      <div className="grid grid-col-1 gap-5">
+        <div className="flex flex-row items-center">
+          <IconBulletPoint icon={faDonate} />
+          <div>
+            <h2>Donate to:</h2>
+            <Nonprofit
+              name="Equal Justice Institute"
+              link="https://support.eji.org/give/153413/#!/donation/checkout"
+            />
+            <Nonprofit
+              name="Black Lives Matter"
+              link="https://secure.actblue.com/donate/ms_blm_homepage_2019"
+            />
+            <Nonprofit
+              name="NAACP"
+              link="https://secure.actblue.com/donate/naacp-1"
+            />
+            <Nonprofit name="ACLU" link="https://action.aclu.org/give/now" />
+            <Nonprofit
+              name="Freedom/Bail Funds"
+              link="https://secure.actblue.com/donate/bailfunds"
+            />
+          </div>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+        <div className="flex flex-row items-center">
+          <IconBulletPoint icon={faHandHoldingHeart} />
+          <div>
+            <h2>Let us match your donation</h2>
+            <p>
+              tbd. probably just email but may build a form and send data to
+              dynamodb
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-row items-center">
+          <IconBulletPoint icon={faBullhorn} />
+          <div>
+            <div>Tell your friends</div>
+            <p>maybe some social links</p>
+          </div>
+        </div>
+        <div className="flex flex-row items-center">
+          <IconBulletPoint icon={faBookOpen} />
+          <div>
+            <div>Educate yourself</div>
+            <p>find some resources</p>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
