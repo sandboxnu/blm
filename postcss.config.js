@@ -9,6 +9,10 @@ module.exports = {
               "./pages/**/*.{js,jsx,ts,tsx}",
               "./components/**/*.{js,jsx,ts,tsx}",
             ],
+
+            // make sure css reset isnt removed on html and body
+            whitelist: ["html", "body"],
+            whitelistPatterns: [/fa/],
             defaultExtractor: (content) =>
               content.match(/[\w-/:]+(?<!:)/g) || [],
           }),
