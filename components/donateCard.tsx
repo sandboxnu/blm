@@ -7,19 +7,24 @@ interface DonateCardProps {
 }
 export default function DonateCard({ img, name, link, logo }: DonateCardProps) {
   return (
-  <div className="flex justify-between w-full bg-gray-900">
-    <div className="flex">
-      <img src={img} />
-      <div className="p-4 pl-8"> 
-        <p className="text-xl font-bold pb-4"> {name} </p>
+  <div className="flex justify-between w-full bg-gray-900 align-middle">
+    <div className="flex ">
+      <div className="max-w-p30"> 
+        <img src={img} />
+      </div>
+      <div className="text-xs md:text-xl p-2 pl-4 md:p-4 md:pl-8"> 
+        <p className="font-bold pb-4"> {name} </p>
         <a 
-          className="bg-cta hover:bg-cta text-black font-bold py-2 px-4 rounded"
-          href={link}>
-          Donate
+          className="bg-cta hover:bg-cta text-black font-bold py-1 md:py-2 px-4 rounded text-xs md:text-xl"
+          href={link}
+        > 
+        Donate Now
         </a>
       </div>
     </div>
-      <img src={logo} className="object-none p-4"/>
+    <div className="max-w-p10 md: max-w-p20 my-auto p-2 md:p-4">
+      <img src={logo} className="object-contain"/>
+    </div>
   </div>
 );
 }
