@@ -12,7 +12,7 @@ import { NextPageContext } from "next";
 import { FundraiserProgress } from "../lib/types";
 import { getFundraiserProgress } from "../lib/cms";
 import EmailSvg from "../public/email.svg";
-import CTA from "../components/CTA";
+import Card from "../components/card";
 
 function Nonprofit({ name, link }) {
   return (
@@ -62,7 +62,7 @@ export default function Home({ progress }: HomeProps) {
         NU clubs are teaming up to match up to ${total} in donations to the
         following nonprofits
       </div>
-      <CTA title="email us" link="mailto:blm@sandboxnu.com" icon={EmailSvg} />
+      <Card title="email us" link="mailto:blm@sandboxnu.com" icon={EmailSvg} />
 
       <div className="mt-5 mb-5">
         <Progress raised={raised} total={total} />

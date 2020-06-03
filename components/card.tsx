@@ -1,11 +1,11 @@
 // For the match cards, the spread the word cards, and the get educated cards
-interface CTAProps {
+interface CardProps {
   icon?: string;
   title: string;
   body: string;
   link: string;
 }
-export default function CTA({ icon, title, body, link }: CTAProps) {
+export default function Card({ icon, title, body, link }: CardProps) {
   return (
     <div>
       <img src={icon} />
