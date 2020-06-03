@@ -6,27 +6,10 @@ import {
   faBullhorn,
   faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
+import Progress from "../components/progress";
+import { Client } from "../prismic-configuration";
+import useSWR from "swr";
 
-function Progress({ raised, total }) {
-  const percent = Math.floor((raised / total) * 100);
-  return (
-    <div className="w-full max-w-xl">
-      <div className="flex items-baseline">
-        <span className="text-2xl">${raised}</span>
-        <span className="ml-1 text-gray-700"> matched of ${total}</span>
-        <span className="ml-auto text-gray-700">
-          ${total - raised} still unmatched!
-        </span>
-      </div>
-      <div className="h-3 bg-white rounded-full shadow-xs">
-        <div
-          className="h-full bg-blue-800 rounded-full"
-          style={{ width: `${percent}%` }}
-        ></div>
-      </div>
-    </div>
-  );
-}
 function Nonprofit({ name, link }) {
   return (
     <div>
@@ -45,7 +28,14 @@ function IconBulletPoint({ icon }) {
     </div>
   );
 }
-export default function Home({ raised, total }) {
+async function getFunds() {
+  const fundraiser = await Client().getSingle("fundraiser");
+  return fundraiser.data;
+}
+export default function Home() {
+  const { data } = useSWR("fundraiser", getFunds);
+  const total = data?.total;
+  const raised = data?.raised;
   return (
     <div className="max-w-screen-md mx-auto mt-10">
       <Head>
@@ -142,10 +132,9 @@ export default function Home({ raised, total }) {
 }
 
 export async function getServerSideProps(context) {
+  const fundraiser = await Client(context.req).getSingle("fundraiser");
+  console.log(fundraiser);
   return {
-    props: {
-      raised: 60,
-      total: 1000,
-    },
+    props: fundraiser.data,
   };
 }
