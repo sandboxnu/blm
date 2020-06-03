@@ -12,6 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.10",
     "next": "9.4.4",
+    "next-images": "^1.4.0",
     "prismic-javascript": "^2.7.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
