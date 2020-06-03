@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 html {
-  @apply bg-gray-100;
+  @apply bg-black text-white;
 }

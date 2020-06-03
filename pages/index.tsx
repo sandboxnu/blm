@@ -50,7 +50,7 @@ export default function Home({ progress }: HomeProps) {
         name="Equal Justice Initiative"
         link="https://support.eji.org/give/153413/#!/donation/checkout"
       />
-      <Header>2. Donate</Header>
+      <Header>2. Spread the word</Header>
     </div>
   );
 }
