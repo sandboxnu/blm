@@ -32,10 +32,10 @@ async function getFunds() {
   const fundraiser = await Client().getSingle("fundraiser");
   return fundraiser.data;
 }
-export default function Home() {
+export default function Home(props) {
   const { data } = useSWR("fundraiser", getFunds);
-  const total = data?.total;
-  const raised = data?.raised;
+  const total = data?.total || props.total;
+  const raised = data?.raised || props.raised;
   return (
     <div className="max-w-screen-md mx-auto mt-10">
       <Head>
