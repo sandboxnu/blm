@@ -9,6 +9,7 @@ import Card from "../components/card";
 import Meta from "../components/meta";
 import Hero from "../components/hero";
 import Header from "../components/header";
+import DonateCard from "../components/donateCard";
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -42,6 +43,14 @@ export default function Home({ progress }: HomeProps) {
       <div className="mt-5 mb-5">
         <Progress raised={raised} total={total} />
       </div>
+
+      <DonateCard
+        img="/eji.png"
+        logo="/eji_logo.png"
+        name="Equal Justice Initiative"
+        link="https://support.eji.org/give/153413/#!/donation/checkout"
+      />
+      <Header>2. Donate</Header>
     </div>
   );
 }

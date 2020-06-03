@@ -5,9 +5,6 @@ interface DonateCardProps {
   link: string;
   logo: string;
 }
-export default function DonateCard({
-  img,
-  name,
-  link,
-  logo,
-}: DonateCardProps) {}
+export default function DonateCard({ img, name, link, logo }: DonateCardProps) {
+  return <img src={img} />;
+}
