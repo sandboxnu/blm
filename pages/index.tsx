@@ -29,13 +29,13 @@ export default function Home({ progress }: HomeProps) {
         <Card
           title="email us"
           body="blm@sandboxnu.com"
-          link="mailto:blm@sandboxnu.com"
+          href="mailto:blm@sandboxnu.com"
           icon={EmailSvg}
         />
         <Card
           title="message us"
           body="m.me/sandboxnu"
-          link="https://m.me/sandboxnu"
+          href="https://m.me/sandboxnu"
           icon={MessengerSvg}
         />
       </div>
@@ -51,6 +51,25 @@ export default function Home({ progress }: HomeProps) {
         link="https://support.eji.org/give/153413/#!/donation/checkout"
       />
       <Header>2. Spread the word</Header>
+      <p>
+        Share the initiative one Facebook, LinkedIn, Twitter, Instagram, and any
+        other social media.
+      </p>
+      <Header>3. Get educated</Header>
+      <p>
+        The interenet is full of resources dedicated to social justice. Here are
+        some of them.
+      </p>
+      <Card
+        body="Resources from the Obama Foundation"
+        title="Anguish and action"
+        href="https://www.obama.org/anguish-and-action/"
+      />
+      <Card
+        body="Resources from the Obama Foundation"
+        title="Anguish and action"
+        href="https://www.obama.org/anguish-and-action/"
+      />
     </div>
   );
 }

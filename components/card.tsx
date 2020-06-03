@@ -3,9 +3,9 @@ interface CardProps {
   icon?: string;
   title: string;
   body: string;
-  link: string;
+  href: string;
 }
-export default function Card({ icon, title, body, link }: CardProps) {
+export default function Card({ icon, title, body, href }: CardProps) {
   return (
     <div>
       <img src={icon} />
