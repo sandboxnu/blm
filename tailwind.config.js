@@ -2,7 +2,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cta: "#243c5a",
+        cta: "#FCE21B",
         gray: {
           "100": "#f5f5f5",
           "200": "#eeeeee",

@@ -13,7 +13,7 @@ export default function Progress({ raised, total }: FundraiserProgress) {
       </div>
       <div className="h-3 bg-white rounded-full shadow-xs">
         <div
-          className="h-full bg-blue-800 rounded-full"
+          className="h-full bg-cta rounded-full"
           style={{ width: `${percent}%` }}
         ></div>
       </div>
