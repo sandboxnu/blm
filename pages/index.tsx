@@ -7,8 +7,10 @@ import {
   faBookOpen,
 } from "@fortawesome/free-solid-svg-icons";
 import Progress from "../components/progress";
-import { Client } from "../prismic-configuration";
 import useSWR from "swr";
+import { NextPageContext } from "next";
+import { FundraiserProgress } from "../lib/types";
+import { getFundraiserProgress } from "../lib/cms";
 
 function Nonprofit({ name, link }) {
   return (
@@ -28,14 +30,13 @@ function IconBulletPoint({ icon }) {
     </div>
   );
 }
-async function getFunds() {
-  const fundraiser = await Client().getSingle("fundraiser");
-  return fundraiser.data;
+interface HomeProps {
+  progress: FundraiserProgress;
 }
-export default function Home(props) {
-  const { data } = useSWR("fundraiser", getFunds);
-  const total = data?.total || props.total;
-  const raised = data?.raised || props.raised;
+export default function Home({ progress }: HomeProps) {
+  const { data } = useSWR("fundraiser", getFundraiserProgress);
+  const total = data?.total || progress.total;
+  const raised = data?.raised || progress.raised;
   return (
     <div className="max-w-screen-md mx-auto mt-10">
       <Head>
@@ -131,10 +132,11 @@ export default function Home(props) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const fundraiser = await Client(context.req).getSingle("fundraiser");
-  console.log(fundraiser);
+export async function getServerSideProps(context: NextPageContext) {
+  const progress = await getFundraiserProgress();
   return {
-    props: fundraiser.data,
+    props: {
+      progress,
+    },
   };
 }

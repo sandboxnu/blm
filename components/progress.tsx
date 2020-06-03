@@ -1,4 +1,6 @@
-export default function Progress({ raised, total }) {
+import { FundraiserProgress } from "../lib/types";
+
+export default function Progress({ raised, total }: FundraiserProgress) {
   const percent = Math.floor((raised / total) * 100);
   return (
     <div className="w-full max-w-xl">
