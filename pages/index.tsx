@@ -16,6 +16,7 @@ import {
   LinkedInSvg,
   InstaSvg,
 } from "../components/svg";
+const donateCardData = require("../data/charities")
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -24,6 +25,19 @@ export default function Home({ progress }: HomeProps) {
   const { data } = useSWR("fundraiser", getFundraiserProgress);
   const total = data?.total || progress.total;
   const raised = data?.raised || progress.raised;
+  const donateCardArray = [];
+
+  donateCardData.forEach(card => {
+    donateCardArray.push(
+      <DonateCard
+        img={card.img}
+        logo={card.logo}
+        name={card.name}
+        link={card.link}
+      />
+    )
+  });
+
   return (
     <div className="max-w-screen-md mx-auto p-5 mt-5 sm:p-0 sm:mt-10 font-display">
       <Meta />
@@ -58,13 +72,7 @@ export default function Home({ progress }: HomeProps) {
       </div>
 
       <Progress raised={raised} total={total} />
-
-      <DonateCard
-        img="/eji.png"
-        logo="/eji_logo.png"
-        name="Equal Justice Initiative"
-        link="https://support.eji.org/give/153413/#!/donation/checkout"
-      />
+      { donateCardArray }
       <Header
         title="2. Get Educated"
         subtitle="It's on the people who can't directly relate to educate themselves. Here are a few of the
