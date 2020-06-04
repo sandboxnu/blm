@@ -57,9 +57,7 @@ export default function Home({ progress }: HomeProps) {
         />
       </div>
 
-      <div className="mt-5 mb-5">
-        <Progress raised={raised} total={total} />
-      </div>
+      <Progress raised={raised} total={total} />
 
       <DonateCard
         img="/eji.png"
