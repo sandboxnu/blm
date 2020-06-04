@@ -7,10 +7,10 @@ interface DonateCardProps {
 }
 export default function DonateCard({ img, name, link, logo }: DonateCardProps) {
   return (
-  <div className="flex justify-between w-full bg-gray-900 align-middle">
+  <div className="flex justify-between w-full bg-gray-900 align-middle my-8 h-24 md:h-32">
     <div className="flex ">
-      <div className="max-w-p30"> 
-        <img src={img} />
+      <div> 
+        <img src={img} className="h-24 md:h-32"/>
       </div>
       <div className="text-sm md:text-xl p-2 pl-4 md:p-4 md:pl-8"> 
         <p className="font-bold pb-4"> {name} </p>
