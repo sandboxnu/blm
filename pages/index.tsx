@@ -41,7 +41,7 @@ export default function Home({ progress }: HomeProps) {
           </span>
         }
       />
-      <div className="grid gap-10 sm:grid-cols-2">
+      <div className="grid gap-8 sm:grid-cols-2">
         <Card
           title="email us"
           body="blm@sandboxnu.com"
@@ -87,7 +87,7 @@ export default function Home({ progress }: HomeProps) {
         title="3. Spread the Word"
         subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
       />
-      <div className="grid gap-10 sm:grid-cols-2">
+      <div className="grid gap-8 sm:grid-cols-2 mb-10">
         <Card icon={FBSvg} body="" title="FACEBOOK" href="" />
         <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
         <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
