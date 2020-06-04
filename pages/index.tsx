@@ -7,6 +7,7 @@ import Card from "../components/card";
 import Meta from "../components/meta";
 import Hero from "../components/hero";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import DonateCard from "../components/donateCard";
 import {
   EmailSvg,
@@ -24,7 +25,7 @@ export default function Home({ progress }: HomeProps) {
   const total = data?.total || progress.total;
   const raised = data?.raised || progress.raised;
   return (
-    <div className="max-w-screen-md mx-auto mt-10 font-display">
+    <div className="max-w-screen-md mx-auto p-5 mt-5 sm:p-0 sm:mt-10 font-display">
       <Meta />
 
       <Hero progress={progress} />
@@ -90,6 +91,8 @@ export default function Home({ progress }: HomeProps) {
         <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
         <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
       </div>
+
+      <Footer />
     </div>
   );
 }
