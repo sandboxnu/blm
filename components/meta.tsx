@@ -9,6 +9,10 @@ export default function Meta() {
         content="Northeastern clubs are matching donations to fight for racial justice."
       />
       <link rel="icon" href="/favicon.ico" />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700;900&display=swap"
+        rel="stylesheet"
+      />
       <meta
         property="og:title"
         content="Northeastern clubs for Racial Justice"
