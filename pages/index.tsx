@@ -34,6 +34,7 @@ export default function Home({ progress }: HomeProps) {
         logo={card.logo}
         name={card.name}
         link={card.link}
+        desc={card.desc}
       />
     )
   });
