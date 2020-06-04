@@ -23,8 +23,8 @@ export default function Progress({ raised, total }: FundraiserProgress) {
         ></div>
       </div>
       <span className="visible sm:invisible text-gray-400">
-          <span className="mr-1 font-bold"> ${total - raised}</span>
-          still unmatched!
+        <span className="mr-1 font-bold"> ${total - raised}</span>
+        still unmatched!
       </span>
     </div>
   );

@@ -7,6 +7,7 @@ import Card from "../components/card";
 import Meta from "../components/meta";
 import Hero from "../components/hero";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import DonateCard from "../components/donateCard";
 import {
   EmailSvg,
@@ -92,6 +93,8 @@ export default function Home({ progress }: HomeProps) {
         <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
         <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
       </div>
+
+      <Footer />
     </div>
   );
 }
