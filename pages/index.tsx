@@ -28,7 +28,7 @@ export default function Home({ progress }: HomeProps) {
     <div className="max-w-screen-md mx-auto p-5 mt-5 sm:p-0 sm:mt-10 font-display">
       <Meta />
 
-      <Hero progress={progress} />
+      <Hero total={total} />
 
       <Header
         title="1. Donate"
