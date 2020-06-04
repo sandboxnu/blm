@@ -71,34 +71,6 @@ export default function Home({ progress }: HomeProps) {
         subtitle="It's on the people who can't directly relate to educate themselves. Here are a few of the
           many resources that exist for education."
       />
-      <Card
-        body="Resources from the Obama Foundation"
-        title="Anguish and action"
-        href="https://www.obama.org/anguish-and-action/"
-      />
-      <Card
-        body="Resources from the Obama Foundation"
-        title="Anguish and action"
-        href="https://www.obama.org/anguish-and-action/"
-      />
-      <Header
-        title="3. Spread the Word"
-        subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
-      />
-      <p>
-        Share the initiative one Facebook, LinkedIn, Twitter, Instagram, and any
-        other social media.
-      </p>
-      <div className="grid gap-10 sm:grid-cols-2">
-        <Card icon={FBSvg} body="" title="FACEBOOK" href="" />
-        <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
-        <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
-      </div>
-
-      <p>
-        The interenet is full of resources dedicated to social justice. Here are
-        some of them.
-      </p>
       <div className="grid gap-10">
         <Card
           body="Resources from the Obama Foundation"
@@ -110,6 +82,15 @@ export default function Home({ progress }: HomeProps) {
           title="Anguish and action"
           href="https://www.obama.org/anguish-and-action/"
         />
+      </div>
+      <Header
+        title="3. Spread the Word"
+        subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
+      />
+      <div className="grid gap-10 sm:grid-cols-2">
+        <Card icon={FBSvg} body="" title="FACEBOOK" href="" />
+        <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
+        <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
       </div>
     </div>
   );
