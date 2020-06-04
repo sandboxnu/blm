@@ -15,14 +15,14 @@ export default function DonateCard({ img, name, link, logo }: DonateCardProps) {
         <div className="text-sm md:text-xl p-4 pl-4 md:pl-8">
           <p className="font-bold pb-4 md:pb-6"> {name} </p>
           <a
-            className="bg-cta hover:opacity-25 text-black font-bold py-1 md:py-2 px-4 rounded text-xs md:text-xl"
+            className="bg-cta hover:shadow-outline text-black font-bold py-1 md:py-2 px-4 rounded text-xs md:text-xl"
             href={link}
           >
             Donate Now
           </a>
         </div>
       </div>
-      <div className="max-w-p10 md: max-w-p20 my-auto p-2 md:p-4">
+      <div className="max-w-p10 md: max-w-p20 my-auto p-2 md:p-4 hidden sm:block">
         <img src={logo} className="object-contain" />
       </div>
     </div>

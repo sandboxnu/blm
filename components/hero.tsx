@@ -1,12 +1,11 @@
 // big top header
-import { FundraiserProgress } from "../lib/types";
 import BLMIcon from "../public/blm.svg";
 
 interface HeroProps {
-  progress: FundraiserProgress;
+  total: Number;
 }
 
-export default function Hero({ progress }: HeroProps) {
+export default function Hero({ total }: HeroProps) {
   return (
     <div className="text-justify">
       {/* keeping this here just in case we don't want to do this via svg someday */}
@@ -21,10 +20,11 @@ export default function Hero({ progress }: HeroProps) {
       </div> */}
       <div className="pt-8 font-light">
         Student Groups at Northeastern University are teaming up to
-        <span className="font-semibold"> match up to $1000 in donations </span>
-        to the following nonprofits. <span className="font-semibold">
-          You
-        </span>{" "}
+        <span className="font-semibold">
+          {" "}
+          match up to ${total} in donations{" "}
+        </span>
+        to the following nonprofits. <span className="font-semibold">You</span>{" "}
         can make a difference in the fight for Freedom, Liberation and Justice
         by donating, educating yourself and others, and standing in soldiarity
         with the movement.
