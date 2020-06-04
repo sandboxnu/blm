@@ -18,6 +18,7 @@ import {
 } from "../components/svg";
 import { CHARITIES } from "../data/charities";
 import { EDUCATION } from "../data/education";
+import { CLUBS } from "../data/clubs";
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -85,6 +86,18 @@ export default function Home({ progress }: HomeProps) {
         <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
       </div> */}
 
+      <div className="py-12">
+        <div className="font-semibold pb-2">Donors</div>
+        <div className="font-light">
+          Thank you to the eboards, alumni, and members of the following clubs
+          for their personal donations to the matching fund:
+        </div>
+        <div className="mt-2 grid grid-cols-2 gap-1">
+          {CLUBS.map((c) => (
+            <div>{c}</div>
+          ))}
+        </div>
+      </div>
       <Footer />
     </div>
   );
