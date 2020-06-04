@@ -19,7 +19,7 @@ export default function DonateCard({
         <div>
           <img src={img} className="h-24 md:h-32" />
         </div>
-        <div className="md:text-xl p-4 pl-4 md:pl-8">
+        <div className="md:text-xl p-2 pl-4 md:p-4 md:pl-8">
           <a
             href={infoHref}
             target="_blank"
@@ -29,12 +29,14 @@ export default function DonateCard({
             {name}
           </a>
           <a
-            className="bg-cta hover:shadow-outline text-black font-bold py-1 md:py-2 px-4 rounded text-xs md:text-xl"
+            className="inline-flex items-center bg-cta hover:shadow-outline px-4 h-8 rounded"
             href={donateHref}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Donate Now
+            <div className="text-black font-bold text-sm sm:text-lg">
+              Donate Now
+            </div>
           </a>
         </div>
       </div>

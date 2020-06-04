@@ -28,7 +28,7 @@ export default function Home({ progress }: HomeProps) {
   const raised = data?.raised || progress.raised;
 
   return (
-    <div className="max-w-screen-md mx-auto p-5 mt-5 sm:p-0 sm:mt-10 font-display">
+    <div className="max-w-screen-md mx-auto p-5 mt-5 md:p-0 md:mt-10 font-display">
       <Meta />
 
       <Hero total={total} />
