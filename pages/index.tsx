@@ -64,13 +64,7 @@ export default function Home({ progress }: HomeProps) {
         <Progress raised={raised} total={total} />
       </div>
       {CHARITIES.map((card) => (
-        <DonateCard
-          key={card.name}
-          img={card.img}
-          logo={card.logo}
-          name={card.name}
-          link={card.link}
-        />
+        <DonateCard key={card.name} {...card} />
       ))}
       <Header
         title="2. Get Educated"
@@ -78,12 +72,7 @@ export default function Home({ progress }: HomeProps) {
       />
       <div className="grid gap-10">
         {EDUCATION.map((card) => (
-          <Card
-            key={card.title}
-            body={card.body}
-            title={card.title}
-            href={card.href}
-          />
+          <Card key={card.title} {...card} />
         ))}
       </div>
       {/* <Header
