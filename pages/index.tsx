@@ -3,14 +3,19 @@ import useSWR from "swr";
 import { NextPageContext } from "next";
 import { FundraiserProgress } from "../lib/types";
 import { getFundraiserProgress } from "../lib/cms";
-import EmailSvg from "../public/email.svg";
-import MessengerSvg from "../public/messenger.svg";
 import Card from "../components/card";
 import Meta from "../components/meta";
 import Hero from "../components/hero";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import DonateCard from "../components/donateCard";
+import {
+  EmailSvg,
+  MessengerSvg,
+  FBSvg,
+  LinkedInSvg,
+  InstaSvg,
+} from "../components/svg";
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -37,7 +42,7 @@ export default function Home({ progress }: HomeProps) {
           </span>
         }
       />
-      <div className="flex">
+      <div className="grid gap-10 sm:grid-cols-2">
         <Card
           title="email us"
           body="blm@sandboxnu.com"
@@ -67,20 +72,28 @@ export default function Home({ progress }: HomeProps) {
         subtitle="It's on the people who can't directly relate to educate themselves. Here are a few of the
           many resources that exist for education."
       />
-      <Card
-        body="Resources from the Obama Foundation"
-        title="Anguish and action"
-        href="https://www.obama.org/anguish-and-action/"
-      />
-      <Card
-        body="Resources from the Obama Foundation"
-        title="Anguish and action"
-        href="https://www.obama.org/anguish-and-action/"
-      />
+      <div className="grid gap-10">
+        <Card
+          body="Resources from the Obama Foundation"
+          title="Anguish and action"
+          href="https://www.obama.org/anguish-and-action/"
+        />
+        <Card
+          body="Resources from the Obama Foundation"
+          title="Anguish and action"
+          href="https://www.obama.org/anguish-and-action/"
+        />
+      </div>
       <Header
         title="3. Spread the Word"
         subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
       />
+      <div className="grid gap-10 sm:grid-cols-2">
+        <Card icon={FBSvg} body="" title="FACEBOOK" href="" />
+        <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
+        <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
+      </div>
+
       <Footer />
     </div>
   );
