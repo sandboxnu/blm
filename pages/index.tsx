@@ -16,7 +16,8 @@ import {
   LinkedInSvg,
   InstaSvg,
 } from "../components/svg";
-const donateCardData = require("../data/charities");
+import { CHARITIES } from "../data/charities";
+import { EDUCATION } from "../data/education";
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -25,18 +26,6 @@ export default function Home({ progress }: HomeProps) {
   const { data } = useSWR("fundraiser", getFundraiserProgress);
   const total = data?.total || progress.total;
   const raised = data?.raised || progress.raised;
-  const donateCardArray = [];
-
-  donateCardData.forEach((card) => {
-    donateCardArray.push(
-      <DonateCard
-        img={card.img}
-        logo={card.logo}
-        name={card.name}
-        link={card.link}
-      />
-    );
-  });
 
   return (
     <div className="max-w-screen-md mx-auto p-5 mt-5 sm:p-0 sm:mt-10 font-display">
@@ -74,34 +63,30 @@ export default function Home({ progress }: HomeProps) {
       <div className="mb-16 mt-12">
         <Progress raised={raised} total={total} />
       </div>
-      {donateCardArray}
+      {CHARITIES.map((card) => (
+        <DonateCard
+          key={card.name}
+          img={card.img}
+          logo={card.logo}
+          name={card.name}
+          link={card.link}
+        />
+      ))}
       <Header
         title="2. Get Educated"
         subtitle="Learn more about instituionalized racism and how you can make an impact."
       />
       <div className="grid gap-10">
-        <Card
-          body="Collection of readings to learn to be an effective ally."
-          title="Justice in June"
-          href="https://docs.google.com/document/d/1H-Vxs6jEUByXylMS2BjGH1kQ7mEuZnHpPSs1Bpaqmw0/preview?pru=AAABcppkS48%2AWmo91FkcRICr88LdxGN2Qg&fbclid=IwAR1lA2EGbMmY6oDsq5uJrhWTC3lzpJufTd-naUKCJ0uC2iCWx4WqMRzO-hQ"
-        />
-        <Card
-          body="Report on racial disparities in arrests and use of force."
-          title="Science of Justice"
-          href="https://policingequity.org/images/pdfs-doc/CPE_SoJ_Race-Arrests-UoF_2016-07-08-1130.pdf"
-        />
-        <Card
-          body="Resources from the Obama Foundation."
-          title="Anguish and action"
-          href="https://www.obama.org/anguish-and-action/"
-        />
-        <Card
-          body="Donate with or without money."
-          title="Other ways to help"
-          href="https://blacklivesmatters.carrd.co/#donate"
-        />
+        {EDUCATION.map((card) => (
+          <Card
+            key={card.title}
+            body={card.body}
+            title={card.title}
+            href={card.href}
+          />
+        ))}
       </div>
-      <Header
+      {/* <Header
         title="3. Spread the Word"
         subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
       />
@@ -109,7 +94,7 @@ export default function Home({ progress }: HomeProps) {
         <Card icon={FBSvg} body="" title="FACEBOOK" href="" />
         <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
         <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
-      </div>
+      </div> */}
 
       <Footer />
     </div>

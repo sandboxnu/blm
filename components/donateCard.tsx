@@ -1,5 +1,5 @@
 // card with donate button and info about that charity
-interface DonateCardProps {
+export interface DonateCardProps {
   img: string;
   name: string;
   link: string;

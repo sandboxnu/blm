@@ -1,5 +1,5 @@
 // For the match cards, the spread the word cards, and the get educated cards
-interface CardProps {
+export interface CardProps {
   icon?: string;
   title: string;
   body: string;
