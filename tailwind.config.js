@@ -1,5 +1,22 @@
 module.exports = {
   theme: {
+    fontFamily: {
+      display: [
+        '"Work Sans"',
+        "system-ui",
+        "-apple-system, BlinkMacSystemFont",
+        '"Segoe UI"',
+        "Roboto",
+        '"Helvetica Neue"',
+        "Arial",
+        '"Noto Sans"',
+        "sans-serif",
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+        '"Noto Color Emoji"',
+      ],
+    },
     extend: {
       colors: {
         cta: "#FCE21B",
@@ -20,7 +37,7 @@ module.exports = {
         p20: "20%",
         p30: "30%",
         p40: "40%",
-      }
+      },
     },
   },
 };
