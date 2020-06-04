@@ -3,13 +3,18 @@ import useSWR from "swr";
 import { NextPageContext } from "next";
 import { FundraiserProgress } from "../lib/types";
 import { getFundraiserProgress } from "../lib/cms";
-import EmailSvg from "../public/email.svg";
-import MessengerSvg from "../public/messenger.svg";
 import Card from "../components/card";
 import Meta from "../components/meta";
 import Hero from "../components/hero";
 import Header from "../components/header";
 import DonateCard from "../components/donateCard";
+import {
+  EmailSvg,
+  MessengerSvg,
+  FBSvg,
+  LinkedInSvg,
+  InstaSvg,
+} from "../components/svg";
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -25,7 +30,7 @@ export default function Home({ progress }: HomeProps) {
       <Hero progress={progress} />
 
       <Header>1. Donate</Header>
-      <div className="flex">
+      <div className="grid gap-10 sm:grid-cols-2">
         <Card
           title="email us"
           body="blm@sandboxnu.com"
@@ -55,21 +60,29 @@ export default function Home({ progress }: HomeProps) {
         Share the initiative one Facebook, LinkedIn, Twitter, Instagram, and any
         other social media.
       </p>
+      <div className="grid gap-10 sm:grid-cols-2">
+        <Card icon={FBSvg} body="" title="FACEBOOK" href="" />
+        <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
+        <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
+      </div>
+
       <Header>3. Get educated</Header>
       <p>
         The interenet is full of resources dedicated to social justice. Here are
         some of them.
       </p>
-      <Card
-        body="Resources from the Obama Foundation"
-        title="Anguish and action"
-        href="https://www.obama.org/anguish-and-action/"
-      />
-      <Card
-        body="Resources from the Obama Foundation"
-        title="Anguish and action"
-        href="https://www.obama.org/anguish-and-action/"
-      />
+      <div className="grid gap-10">
+        <Card
+          body="Resources from the Obama Foundation"
+          title="Anguish and action"
+          href="https://www.obama.org/anguish-and-action/"
+        />
+        <Card
+          body="Resources from the Obama Foundation"
+          title="Anguish and action"
+          href="https://www.obama.org/anguish-and-action/"
+        />
+      </div>
     </div>
   );
 }
