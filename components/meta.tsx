@@ -3,7 +3,7 @@ import Head from "next/head";
 export default function Meta() {
   return (
     <Head>
-      <title>Black Lives Matter</title>
+      <title>NU Clubs for BLM</title>
       <meta
         name="description"
         content="Northeastern clubs are matching donations to fight for racial justice."
