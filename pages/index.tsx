@@ -16,7 +16,7 @@ import {
   LinkedInSvg,
   InstaSvg,
 } from "../components/svg";
-const donateCardData = require("../data/charities")
+const donateCardData = require("../data/charities");
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -27,7 +27,7 @@ export default function Home({ progress }: HomeProps) {
   const raised = data?.raised || progress.raised;
   const donateCardArray = [];
 
-  donateCardData.forEach(card => {
+  donateCardData.forEach((card) => {
     donateCardArray.push(
       <DonateCard
         img={card.img}
@@ -35,7 +35,7 @@ export default function Home({ progress }: HomeProps) {
         name={card.name}
         link={card.link}
       />
-    )
+    );
   });
 
   return (
@@ -71,8 +71,10 @@ export default function Home({ progress }: HomeProps) {
         />
       </div>
 
-      <Progress raised={raised} total={total} />
-      { donateCardArray }
+      <div className="mb-16 mt-12">
+        <Progress raised={raised} total={total} />
+      </div>
+      {donateCardArray}
       <Header
         title="2. Get Educated"
         subtitle="It's on the people who can't directly relate to educate themselves. Here are a few of the
