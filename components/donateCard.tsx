@@ -22,7 +22,7 @@ export default function DonateCard({ img, name, link, logo }: DonateCardProps) {
           </a>
         </div>
       </div>
-      <div className="max-w-p10 md: max-w-p20 my-auto p-2 md:p-4">
+      <div className="max-w-p10 md: max-w-p20 my-auto p-2 md:p-4 hidden sm:block">
         <img src={logo} className="object-contain" />
       </div>
     </div>

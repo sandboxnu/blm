@@ -12,7 +12,7 @@ export default function Progress({ raised, total }: FundraiserProgress) {
             <span className="font-bold"> ${total}</span>
           </span>
 
-          <span className="invisible sm:visible ml-auto text-gray-400">
+          <span className="hidden sm:inline ml-auto text-gray-400">
             <span className="mr-1 font-bold"> ${total - raised}</span>
             still unmatched!
           </span>
@@ -23,7 +23,7 @@ export default function Progress({ raised, total }: FundraiserProgress) {
             style={{ width: `${percent}%` }}
           ></div>
         </div>
-        <span className="visible sm:invisible text-gray-400">
+        <span className="sm:hidden text-gray-400">
           <span className="mr-1 font-bold"> ${total - raised}</span>
           still unmatched!
         </span>
