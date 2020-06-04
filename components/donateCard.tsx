@@ -17,6 +17,8 @@ export default function DonateCard({ img, name, link, logo }: DonateCardProps) {
           <a
             className="bg-cta hover:shadow-outline text-black font-bold py-1 md:py-2 px-4 rounded text-xs md:text-xl"
             href={link}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Donate Now
           </a>

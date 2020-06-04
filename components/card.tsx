@@ -9,6 +9,8 @@ export default function Card({ icon, title, body, href }: CardProps) {
   return (
     <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex p-5 items-center bg-gray-900 border-2 border-transparent hover:border-cta"
     >
       {icon && <img className="w-12 h-12" src={icon} />}
