@@ -9,6 +9,7 @@ import Card from "../components/card";
 import Meta from "../components/meta";
 import Hero from "../components/hero";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import DonateCard from "../components/donateCard";
 
 interface HomeProps {
@@ -80,6 +81,7 @@ export default function Home({ progress }: HomeProps) {
         title="3. Spread the Word"
         subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
       />
+      <Footer />
     </div>
   );
 }
