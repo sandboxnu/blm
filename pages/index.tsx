@@ -107,7 +107,7 @@ export default function Home({ progress }: HomeProps) {
           Thank you to the eboards, alumni, and members of the following clubs
           for their personal donations to the matching fund:
         </div>
-        <div className="mt-2 grid grid-cols-2 gap-2">
+        <div className="mt-5 grid grid-cols-2 row-gap-4">
           {CLUBS.map((c) => (
             <div>{c}</div>
           ))}
