@@ -75,15 +75,30 @@ export default function Home({ progress }: HomeProps) {
           <Card key={card.title} {...card} />
         ))}
       </div>
-      {/* <Header
+      <Header
         title="3. Spread the Word"
         subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
       />
       <div className="grid gap-8 sm:grid-cols-2 mb-10">
-        <Card icon={FBSvg} body="" title="FACEBOOK" href="" />
-        <Card icon={LinkedInSvg} body="" title="LINKEDIN" href="" />
-        <Card icon={InstaSvg} body="" title="INSTAGRAM" href="" />
-      </div> */}
+        <Card
+          icon={FBSvg}
+          body=""
+          title="FACEBOOK"
+          href="https://www.facebook.com/sandboxnu/posts/297328448336287"
+        />
+        <Card
+          icon={LinkedInSvg}
+          body=""
+          title="LINKEDIN"
+          href="https://www.linkedin.com/feed/update/urn:li:activity:6674477545792012288"
+        />
+        <Card
+          icon={InstaSvg}
+          body=""
+          title="INSTAGRAM"
+          href="https://www.instagram.com/p/CBCMjugnXzg/?utm_source=ig_web_copy_link"
+        />
+      </div>
 
       <Footer />
     </div>
