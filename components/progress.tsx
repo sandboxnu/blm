@@ -1,7 +1,7 @@
 import { FundraiserProgress } from "../lib/types";
 
 export default function Progress({ raised, total }: FundraiserProgress) {
-  const percent = Math.floor((raised / total) * 100);
+  const percent = (raised / total) * 100;
   return (
     <div className="w-full">
       <div className="flex items-baseline">
