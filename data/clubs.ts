@@ -1,7 +1,7 @@
 export const CLUBS: String[] = [
   "Sandbox",
   "Origin",
-  // "Scout",
+  "Scout",
   "MULTI",
   "NUHacks",
   "NUWIT",
@@ -9,4 +9,5 @@ export const CLUBS: String[] = [
   "Smart Women Securities",
   "NUImpact",
   "Society of Asian Scientists and Engineers",
+  "HackBeanpot",
 ];
