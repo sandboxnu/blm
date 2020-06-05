@@ -1,6 +1,6 @@
 export const CLUBS: String[] = [
   "Sandbox",
-  // "Origin",
+  "Origin",
   // "Scout",
   "MULTI",
   "NUHacks",
