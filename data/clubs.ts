@@ -4,6 +4,7 @@ export const CLUBS: String[] = [
   "MULTI",
   "NUHacks",
   "NUWIT",
+  "CoSMO",
   "Smart Women Securities",
   "NUImpact",
 ];
