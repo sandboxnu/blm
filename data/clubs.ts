@@ -10,4 +10,5 @@ export const CLUBS: String[] = [
   "NUImpact",
   "Society of Asian Scientists and Engineers",
   "HackBeanpot",
+  "WISE",
 ];
