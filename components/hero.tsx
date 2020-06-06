@@ -26,7 +26,7 @@ export default function Hero({ total }: HeroProps) {
         </span>
         to the following nonprofits. <span className="font-semibold">You</span>{" "}
         can make a difference in the fight for Freedom, Liberation and Justice
-        by donating, educating yourself and others, and standing in soldiarity
+        by donating, educating yourself and others, and standing in solidarity
         with the movement.
         <br />
         <br />
