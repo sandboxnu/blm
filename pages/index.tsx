@@ -19,6 +19,7 @@ import {
 import { CHARITIES } from "../data/charities";
 import { EDUCATION } from "../data/education";
 import { CLUBS } from "../data/clubs";
+import { BUSINESSES } from "../data/businesses";
 
 interface HomeProps {
   progress: FundraiserProgress;
@@ -77,7 +78,16 @@ export default function Home({ progress }: HomeProps) {
         ))}
       </div>
       <Header
-        title="3. Spread the Word"
+        title="3. Support Black-Owned Businesses"
+        subtitle="Directly support Black communities by shopping at Black-owned businesses."
+      />
+      <div className="grid gap-10">
+        {BUSINESSES.map((card) => (
+          <Card key={card.title} {...card} />
+        ))}
+      </div>
+      <Header
+        title="4. Spread the Word"
         subtitle="Share the initiative on social media to spread education and demonstrate solidarity."
       />
       <div className="grid gap-8 sm:grid-cols-2 mb-10">
