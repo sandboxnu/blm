@@ -1,4 +1,4 @@
-export const CLUBS: String[] = [
+export const CLUBS: string[] = [
   "Sandbox",
   "Origin",
   "Scout",

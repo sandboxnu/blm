@@ -119,7 +119,7 @@ export default function Home({ progress }: HomeProps) {
         </div>
         <div className="mt-5 grid grid-cols-2 row-gap-4">
           {CLUBS.map((c) => (
-            <div>{c}</div>
+            <div key={c}>{c}</div>
           ))}
         </div>
       </div>

@@ -36,4 +36,18 @@ export const CHARITIES: DonateCardProps[] = [
     donateHref: "https://secure.actblue.com/donate/bailfunds",
     infoHref: "https://www.massbailfund.org/about.html",
   },
+  {
+    img: "/blvc.jpg",
+    logo: "",
+    name: "Black Visions Collective",
+    donateHref: "https://secure.everyaction.com/4omQDAR0oUiUagTu0EG-Ig2",
+    infoHref: "https://www.blackvisionsmn.org/about",
+  },
+  {
+    img: "/reclaimblock.jpg",
+    logo: "/reclaimblock_logo.jpg",
+    name: "Reclaim the Block",
+    donateHref: "https://secure.everyaction.com/zae4prEeKESHBy0MKXTIcQ2",
+    infoHref: "https://www.reclaimtheblock.org/home/#about",
+  },
 ];
