@@ -11,4 +11,6 @@ export const CLUBS: string[] = [
   "Society of Asian Scientists and Engineers",
   "HackBeanpot",
   "WISE",
+  "Code 4 Community",
+  "SAPPHIRES",
 ];
