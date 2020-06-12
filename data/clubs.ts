@@ -13,4 +13,5 @@ export const CLUBS: string[] = [
   "WISE",
   "Code 4 Community",
   "SAPPHIRES",
+  "NU Ballroom Dance",
 ];
