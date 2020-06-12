@@ -5,7 +5,7 @@ export const BUSINESSES: CardProps[] = [
     body: "Resource for finding Black-owned restaurants by region.",
     title: "Restaurants",
     href:
-      "https://policingequity.org/images/pdfs-doc/CPE_SoJ_Race-Arrests-UoF_2016-07-08-1130.pdf",
+      "https://docs.google.com/document/d/19uM-DEU7urJp9_150AZvbI0frgP9VfvN_8NCdwn-t6Y/",
   },
   {
     body: "List of Black-owned independent bookstores.",
